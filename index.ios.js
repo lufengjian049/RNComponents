@@ -4,28 +4,34 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import TestIndex from './src/components/test/index';
 
 export default class RNCompoents extends Component {
+  
   render() {
+    console.log('====================================')
+  console.log('test')
+  console.log('====================================')
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native!11111
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          To get started, edit index.ios.jsd22121
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          Cmd+D or shake for dev menu33333
         </Text>
+        <TestIndex />
       </View>
     );
   }

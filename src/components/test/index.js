@@ -1,9 +1,9 @@
-import React from 'react'
-import {View} from 'react-native'
+import {Component} from 'react'
+import {View,Text} from 'react-native'
 
 // import Icon from './Components/Icon'
 
-class Example extends React.Component{
+class Example extends Component{
   state = {
     inner: null
   }
@@ -17,7 +17,7 @@ class Example extends React.Component{
   }
 }
 //测试主面板 
-export default class Index extends React.Component{
+export default class Index extends Component{
   constructor(){
     super();
     const content = [];
@@ -28,11 +28,33 @@ export default class Index extends React.Component{
     // Icon.__cards__(define);
     this.state = {content};
   }
+
+  @autoBind
+  reload(){
+    alert('reload btn and current  state cotent length='+ this.state.content.length);
+  }
+
   render(){
     return (
       <View style={{flex:1,backgroundColor:'#efefef'}}>
+      <Text onPress={this.reload}>reload button</Text>
         {this.state.content}
       </View>
     )
+  }
+}
+
+function autoBind(target, name, {value:fn,configurable,enumerable}){
+  if(typeof fn !== 'function'){
+    throw new SyntaxError(`@autobind only can be used on functions,not ${fn}`);
+  }
+  return {
+    configurable,
+    enumerable,
+    get() {
+      //访问器中this就指向当前的对象，而非target(当前对象的原型对象)
+      const boundFn = fn.bind(this);
+      return boundFn;
+    }
   }
 }
