@@ -97,7 +97,7 @@
         ```
 4. `Flow` 静态类型检查配置
 
-5. `eslint` 代码检查配置(使用airbnb的标准 `eslint-config-airbnb`)
+5. `eslint` 代码检查配置(使用airbnb的标准 `eslint-config-airbnb`) && pre-commit，[eslint address](http://eslint.cn/)
 
     * airbnb的依赖有 `eslint`, `eslint-plugin-import`, `eslint-plugin-react`, and `eslint-plugin-jsx-a11y`.
 
@@ -189,21 +189,35 @@
 
     ```
 
-    issues:
+    * issues:
 
-    1.[object Object]: ESLint configuration is invalid: - Unexpected top-level property "ecmaFeatures".
+        1. [object Object]: ESLint configuration is invalid: - Unexpected top-level property "ecmaFeatures".
 
-        eslint > 4.0 与 `eslint-config-airbnb` 存在兼容问题，` eslint@3.19.0`
+            eslint > 4.0 与 `eslint-config-airbnb` 存在兼容问题，` eslint@3.19.0`
 
-    2.Arrow function should not return assignment
+        2. Arrow function should not return assignment
+
+            ```
+            ref={ref => this.viewpager = ref}>
+            warning  Arrow function should not return assignment
+
+            ref={ref => (this.viewpager = ref)}>  
+            can fix
+            ```
+    * pre-commit配置
 
     ```
-    ref={ref => this.viewpager = ref}>
-    warning  Arrow function should not return assignment
+    npm install --save-dev pre-commit
 
-    ref={ref => (this.viewpager = ref)}>  
-    can fix
+    //package.json中配置pre-commit
+
+    "pre-commit":[
+        "lint"
+    ]
+
     ```
+
+    * [添加发布自定义的模板](http://cnodejs.org/topic/57c68052b4a3bca66bbddbdd)
 
 6. 单元测试配置
 
