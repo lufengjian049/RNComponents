@@ -72,7 +72,7 @@
 
     此方法很便捷，但是不推荐使用，哪天facebook抽风，把这个关键字拿掉了就歇菜了，所以安全起见还是看下面这个靠谱一点的方法。
 
-    * 运用babel的插件提供组件别名
+    * 运用babel的插件提供组件别名  `babel-plugin-module-resolver`
         * 安装 `babel-plugin-module-alias`
         ```
         npm install --save babel-plugin-module-alias    
@@ -96,6 +96,10 @@
 
         ```
 4. `Flow` 静态类型检查配置
+
+https://zhuanlan.zhihu.com/p/24649359
+
+https://zhuanlan.zhihu.com/p/26204569
 
 5. `eslint` 代码检查配置(使用airbnb的标准 `eslint-config-airbnb`) && pre-commit，[eslint address](http://eslint.cn/)
 

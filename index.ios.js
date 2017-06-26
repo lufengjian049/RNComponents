@@ -11,7 +11,8 @@ import {
   Text,
   View
 } from 'react-native';
-import TestIndex from './src/components/test/index';
+// import TestIndex from './src/components/test/index';
+import TestIndex from 'TestIndex';
 
 export default class RNCompoents extends Component {
   
@@ -22,7 +23,7 @@ export default class RNCompoents extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!11111
+          Welcome to React Native!wwwccc
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.jsd22121
