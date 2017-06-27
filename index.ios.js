@@ -11,7 +11,7 @@ import {
   View
 } from 'react-native';
 // import TestIndex from './src/components/test/index';
-import TestIndex from 'TestIndex';
+import TestIndex from 'test/index'
 
 export default class RNCompoents extends Component {
   
@@ -25,7 +25,7 @@ export default class RNCompoents extends Component {
           Welcome to React Native!wwwccc
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.jsd22121
+          To get started, edit index.ios.jsd221
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}

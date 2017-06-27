@@ -49,6 +49,11 @@ module.exports = {
     "react/no-multi-comp":0, //Declare only one React component per file
     "react/no-string-refs": 1,
   },
+  "settings": {
+    "import/resolver": {
+    "babel-module": {}
+    }
+  },
 
   // 这里设置可能用到的全局变量
   "globals": {

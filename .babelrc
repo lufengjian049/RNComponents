@@ -2,7 +2,14 @@
   "presets": ["react-native"],
   "plugins":[
     "react-require",
-    "transform-decorators-legacy"
+    "transform-decorators-legacy",[
+      "module-resolver", {
+        "root":["./src"],
+        "alias": {
+          "test":"./src/test",
+          "underscore": "lodash"
+        }
+      }]
   ],
   "sourceMaps":true
 }

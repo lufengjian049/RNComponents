@@ -41,7 +41,7 @@ export default class Index extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#efefef' }}>
-        <Text onPress={this.reload}>reload button11</Text>
+        <Text onPress={this.reload}>reload button11333</Text>
         {this.state.content}
       </View>
     )
