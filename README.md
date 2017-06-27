@@ -72,34 +72,67 @@
 
     此方法很便捷，但是不推荐使用，哪天facebook抽风，把这个关键字拿掉了就歇菜了，所以安全起见还是看下面这个靠谱一点的方法。
 
-    * 运用babel的插件提供组件别名  `babel-plugin-module-resolver`
-        * 安装 `babel-plugin-module-alias`
+    * 运用babel的插件提供组件别名  
+        * 安装`babel-plugin-module-resolver` , `babel-plugin-module-alias` 已经废弃
         ```
-        npm install --save babel-plugin-module-alias    
+        npm install --save babel-plugin-module-resolver    
 
         ```  
         * 在`.babelrc`中添加插件配置
          ```
         {
             "plugins":[[
-                "module-alias", [
-                    { "src": "./app", "expose": "app" },
-                    { "src": "./app/resources/icon", "expose": "icon" }
-                ]
+                "module-resolver", {
+                    "root":["./src"],
+                    "alias": {
+                        "test":"./test",
+                        "underscore": "lodash"
+                    }
+                }
             ]]
         }
 
         ```
+        * eslint检查会有报错，清除报错的方法
+        ```
+        npm install --save-dev eslint-plugin-import eslint-import-resolver-babel-module
+
+        //.eslintrc中配置
+        {
+            "extends": "airbnb",
+            "rules": {
+                "comma-dangle": 0
+            },
+            "settings": {
+                "import/resolver": {
+                "babel-module": {}
+                }
+            }
+        }        
+        ```
+
         * 清除缓存，重新起服务
         ```
         npm start -- --reset-cache        
 
         ```
-4. `Flow` 静态类型检查配置
+4. `Flow` 静态类型检查配置(个人觉得只在reducer,action这类文件中进行flow检查，在组件中进行检查一堆一堆错误.....)
 
-https://zhuanlan.zhihu.com/p/24649359
+    * 安装Flow,可以用`flow init`生成一个`.flowconfig` 文件
 
-https://zhuanlan.zhihu.com/p/26204569
+    ```
+    npm install --save-dev flow-bin
+    ```
+
+    * 在需要进行flow检查的文件头部，加上 `@flow` 告诉flow，这里需要检查一下
+
+    * 在package.json中配置命令， `"flow": "flow",`
+
+    注：[flow的使用](https://zhuanlan.zhihu.com/p/24649359)(结合eslint进行检查&&生产时删除注解的方法)
+
+    [flow注解类型详解](https://zhuanlan.zhihu.com/p/26204569)
+
+    [flow详解](http://www.open-open.com/lib/view/open1476089466035.html)
 
 5. `eslint` 代码检查配置(使用airbnb的标准 `eslint-config-airbnb`) && pre-commit，[eslint address](http://eslint.cn/)
 
@@ -253,8 +286,12 @@ https://zhuanlan.zhihu.com/p/26204569
         3. 在终端上，Debug JS Remotly
 
     
-        
+只要发布了一个 `react-native-template-` 前缀的npm包名，就可以使用这个模板，初始化项目
 
+```
+react-native init yourprojectname --template 自定义的名称        
+
+```
 形成项目模板
 
 
