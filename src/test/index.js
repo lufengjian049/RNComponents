@@ -4,7 +4,7 @@
 import { Component } from 'react'
 import { View, Text } from 'react-native'
 
-import Carousel from 'Carousel'
+// import Carousel from 'Carousel'
 // import Icon from './Components/Icon'
 
 class Example extends Component {
