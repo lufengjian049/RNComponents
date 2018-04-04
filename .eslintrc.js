@@ -26,7 +26,7 @@ module.exports = {
 
     // allow async-await
     'generator-star-spacing': 0,
-    "no-return-assign": 1,
+    "no-return-assign": 0,
     "react/jsx-filename-extension": 0,
     "react/self-closing-comp": 1,
     "react/jsx-closing-bracket-location": 0,

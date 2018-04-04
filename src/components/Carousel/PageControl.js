@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { View, Text, StyleSheet } from 'react-native'
 
 const PageControl = (props) => {
@@ -26,7 +27,7 @@ const PageControl = (props) => {
   })
   const Circle = cprops => (
     <View style={[styles.circle, cprops.isSelected ? styles.full : styles.empty]} />
-    )
+  )
   const images = []
   for (let i = 0; i < count; i++) {
     images.push(<Circle key={`circleitem${i}`} isSelected={i === selectedIndex && true || false} />)
@@ -42,13 +43,13 @@ const PageControl = (props) => {
 PageControl.propTypes = {
   count: PropTypes.number.isRequired,
   selectedIndex: PropTypes.number.isRequired,
-  style: View.propTypes.style,
+  // style: View.propTypes.style,
   circlewidth: PropTypes.number,
   activeColor: PropTypes.string,
   color: PropTypes.string,
 }
 PageControl.defaultProps = {
-  style: null,
+  // style: null,
   circlewidth: 8,
   activeColor: '#fff',
   color: '#fff5',

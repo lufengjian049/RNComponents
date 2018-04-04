@@ -7,10 +7,12 @@ import ViewPager from './ViewPager'
 
 const Carousel = (props) => {
   const cards = []
-  const { count, renderCard, selectedIndex, onSelectedIndexChange } = props
+  const {
+    count, renderCard, selectedIndex, onSelectedIndexChange,
+  } = props
   for (let i = 0; i < count; i++) {
     let content = null
-        // 部分渲染时，只处理selectedIndex附近的两个
+    // 部分渲染时，只处理selectedIndex附近的两个
     if ((Math.abs(i - selectedIndex) < 2 && onSelectedIndexChange) || !onSelectedIndexChange) {
       content = renderCard(i)
     }
