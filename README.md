@@ -294,6 +294,7 @@ react-native init yourprojectname --template 自定义的名称
 ```
 形成项目模板
 
+### npm-check 升级依赖，`npm install -g npm-check`,检查更新 `npm-check -u`
 
 
 
